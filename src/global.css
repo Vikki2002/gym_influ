@@ -1,0 +1,116 @@
+.background-image {
+  height: 100vh;
+  width: 100vw;
+  background-image: url("./assets/Page not found.jpg");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+/* Overlay */
+.background-image::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(18, 0, 0, 0.3);
+  z-index: 1;
+}
+
+/* Small screens (mobile) */
+@media (max-width: 576px) {
+  .background-image {
+    background-size: contain; /* Ensure full image is visible on small screens */
+    background-position: top;
+    background-repeat: no-repeat;
+  }
+}
+
+/* Medium screens (tablet) */
+@media (min-width: 577px) and (max-width: 768px) {
+  .background-image {
+    background-size: cover; /* Maintain a balanced look for tablets */
+    background-position: center;
+  }
+}
+
+/* Large screens (desktop) */
+@media (min-width: 769px) and (max-width: 1200px) {
+  .background-image {
+    background-size: cover; /* Standard cover for desktop */
+    background-position: center;
+  }
+}
+
+/* Extra large screens */
+@media (min-width: 1201px) {
+  .background-image {
+    background-size: cover; /* Fully utilize the extra screen real estate */
+    background-position: center;
+  }
+}
+
+
+.menu{
+  cursor: pointer;
+}
+
+.bg-image {
+  width: 100vw;
+  height: 466px;
+  background-image: url("./assets/Section.png");
+  background-size: cover;
+}
+
+
+.text-animation {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  height: 100%; /* To contain the text fully */
+  overflow: hidden;
+}
+
+.animate-text {
+  position: absolute;
+  animation: rotateText 6s infinite;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.animate-text:nth-child(1) {
+  animation-delay: 0s;
+}
+
+.animate-text:nth-child(2) {
+  animation-delay: 2s;
+}
+
+.animate-text:nth-child(3) {
+  animation-delay: 4s;
+}
+
+@keyframes rotateText {
+  0% {
+      opacity: 0;
+      transform: translateY(100%);
+  }
+  10% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+  30% {
+      opacity: 1;
+      transform: translateY(0%);
+  }
+  40% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+  100% {
+      opacity: 0;
+      transform: translateY(-100%);
+  }
+}
